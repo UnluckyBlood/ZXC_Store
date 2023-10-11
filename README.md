@@ -1,2 +1,2 @@
 # ZXC_Store
-This is store help you look dead
+In this project we want create shop from ghoul, it's now we use only html, css, js , and git, this text me add info when do it it's
