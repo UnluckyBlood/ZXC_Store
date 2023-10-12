@@ -1,2 +1,7 @@
-# ZXC_Store
-In this project we want create shop from ghoul, it's now we use only html, css, js , and git, this text me add info when do it it's .
+# gabimaru.store
+В этом проекте мы создадим сайт для продажи одежды собственного бренда.
+Стек технологий: 
+1. HTML/CSS
+2. JavaScript
+3. PHP
+4. MySQL
