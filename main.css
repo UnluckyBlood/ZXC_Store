@@ -1,0 +1,101 @@
+body{
+    background-color: black;
+}
+.Gabimaru{
+    width: 30%; 
+    float:left; 
+    margin: 0 1% 1% 0; 
+    text-align:center;
+    padding: 1%;
+}
+.icon{
+    width: 13%; 
+    position: absolute;
+    text-align:center;
+    padding-left: 4%;
+    padding-top: 0.3%;
+}
+.clothingAcces{
+    width: 50%; 
+    float:left;
+    position: center;
+    text-align:center;
+    padding-left: 3%;
+    padding-top: 0.9%;
+}
+/* .homeIcon{
+    width: 100%; 
+    position: fixed;
+    
+    padding-left: 90%; 
+} */
+.telega{
+    width: 2.6%; 
+    position: absolute;
+    text-align:center;
+    padding-left: 56.5%;
+    padding-top: 0.73%;
+}
+.vk{
+    width: 2.6%; 
+    position: absolute;
+    text-align:center;
+    padding-left: 57.8%;
+    padding-top: 0.7%;
+}
+.shop{
+    width: 3%; 
+    position: absolute;
+    text-align:center;
+    padding-left: 58.8%;
+    padding-top: 0.68%;
+}
+.shirt{
+    width: 100%;
+    margin: 0 1% 1% 0; 
+    text-align:center;
+    padding-top: 1%;  
+}
+
+.divsecond{
+  padding-top: 1%;
+  position: relative;
+  
+  color: #fff;
+}
+
+
+.owl-carousel .item {
+    padding: 0rem;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.flex-container > div {
+  width: 100%;
+  margin: 100%;
+  text-align: center;
+  line-height: 100%;
+  font-size: 100%;
+}
+
+.col {
+  height: 40%;
+  width: 33%;
+}
+
+.col+.col {
+  background-color: black;
+}
+
+.row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+
+
