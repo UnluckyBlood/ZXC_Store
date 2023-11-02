@@ -1,6 +1,88 @@
 body{
     background-color: black;
 }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: #fff;
+  padding-left: 5px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.brand img {
+  width: 35px;
+  height: 35px;
+  padding-top: 5px;
+  margin-right: 10px;
+}
+
+.brand ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.brand ul li {
+  display: inline;
+  margin-right: 5px;
+}
+
+.brand a {
+  text-decoration: none;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.center ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-right: 65px;
+}
+
+.center ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.center a {
+  text-decoration: none;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.social-icons a {
+  text-decoration: none;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.cart a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .Gabimaru{
     width: 30%; 
     float:left; 
