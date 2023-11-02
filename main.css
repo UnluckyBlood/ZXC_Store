@@ -192,3 +192,37 @@ body{
   justify-content: space-between ;
 
 }
+
+.footer {
+  background-color: black;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  width: 100%;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 5px;
+}
+
+.footer-section a {
+  text-decoration: none;
+  color: #fff;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.footer {
+  height: 80px;
+}
