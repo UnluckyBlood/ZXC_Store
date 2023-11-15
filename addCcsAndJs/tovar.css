@@ -120,7 +120,7 @@ html, body {
   background-image: url(images/check-icn.svg);
   background-repeat: no-repeat;
   background-position: center;
-  border: 4px solid rgb(20, 131, 20);
+  border: 4px solid rgb(83, 228, 39);
 }
 
 /* Cable Configuration */
@@ -133,7 +133,7 @@ html, body {
   border-radius: 6px;
   padding: 13px 20px;
   font-size: 14px;
-  color: #5E6977;
+  color: #000000;
   background-color: #fff;
   cursor: pointer;
   transition: all .5s;
@@ -142,7 +142,7 @@ html, body {
 .cable-choose button:hover,
 .cable-choose button:active,
 .cable-choose button:focus {
-  border: 4px solid #188d18;
+  border: 4px solid rgb(83, 228, 39);
   outline: none;
 }
 
