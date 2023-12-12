@@ -9,7 +9,10 @@ body{
   color: #fff;
   padding-left: 5px;
 }
-
+header{
+  height: 80px;
+  width: 100%;
+}
 .left {
   display: flex;
   align-items: center;
@@ -96,7 +99,10 @@ body{
   
   color: #fff;
 }
-
+.stepInTovar {
+  color: #fff;
+  text-decoration: none;
+}
 
 .owl-carousel .item {
     padding: 0rem;

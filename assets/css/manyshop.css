@@ -25,8 +25,6 @@ body {
     margin-left: 10px;
     margin-top: 10px;
     border: 1px solid #ffffff22;
-    background-color: #282c34;
-    background: linear-gradient(0deg, #282c34 0%, rgba(17, 0, 32, 0.5) 100%);
     box-shadow: 0 7px 20px 5px #00000088;
     border-radius: 0.7rem;
     backdrop-filter: blur(7px);
@@ -55,6 +53,9 @@ body {
     height: 250px;
     object-fit: cover;
   }
+  .nft .main .tokenImage img:last-child{display:none}
+  .nft .main .tokenImage:hover img:first-child{display:none}
+  .nft .main .tokenImage:hover img:last-child{display:inline-block}
   .nft .main .description {
     margin: 0.5rem 0;
     color: #a89ec9;
@@ -67,20 +68,13 @@ body {
   .nft .main .tokenInfo .price {
     display: flex;
     align-items: center;
-    color: #ff0000;
+    color: #FFF;
     font-weight: 700;
     font-size: medium;
-    width: 50%;
+    width: 70%;
+    font-size: larger;
   }
-  .nft .main .tokenInfo .price .bigbuy {
-    display: flex;
-    width: 35%;
-    align-items: center;
-    color: rgb(119, 119, 119);
-    font-weight: 700;
-    font-size: small;
-    margin-left: 2rem;
-  }
+
   .nft .main .tokenInfo .price ins {
     margin-left: -0.3rem;
     margin-right: 0.5rem;
@@ -126,12 +120,10 @@ body {
   .nft ::before {
     position: fixed;
     content: "";
-    box-shadow: 0 0 100px 40px #ffffff08;
     top: -10%;
     left: -100%;
-    transform: rotate(-45deg);
     height: 60rem;
-    transition: 0.7s all;
+    transition: 0.3s all;
   }
   .nft:hover {
     border: 1px solid #ffffff44;
@@ -144,7 +136,6 @@ body {
     top: -100%;
     left: 200%;
   }
-  
   .bg {
     position: fixed;
     top: 50%;
