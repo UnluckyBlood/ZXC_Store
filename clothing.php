@@ -33,45 +33,44 @@
                     <a href="#"><img src="assets/picture/vk.png" alt="vk"></a>
                 </div>
                 <div class="cart">
-                    <a href="korzina.html"><img src="assets/picture/korzina.png" alt="Cart"></a>
+                    <a href="cart.php"><img src="assets/picture/korzina.png" alt="Cart"></a>
                 </div>
             </div>
         </nav>
     </header>
 
     <?php
-include('connection.php');
+    include('connection.php');
 
-$sql = "SELECT * FROM products";
-$result = $conn->query($sql);
+    $sql = "SELECT * FROM products";
+    $result = $conn->query($sql);
 
-while ($row = $result->fetch_assoc()) {
-    echo '<div class="nft">';
-    echo '<div class="main">';
-    echo '<div class="product">';
-    echo '<a href="tovar.html" class="tokenImage" onmouseover="changeImage(this)" onmouseout="restoreImage(this)">';
-    echo '<img class="tokenImage front" src="' . $row["front_image"] . '" alt="NFT" />';
-    echo '<img class="tokenImage back" src="' . $row["back_image"] . '" alt="NFT" style="display: none;" />';
-    echo '</a>';
-    echo '<a href="tovar.html" class="stepInTovar"><h2>' . $row["name"] . '</h2></a>';
-    echo '<p class="description">' . $row["description"] . '</p>';
-    echo '<div class="tokenInfo">';
-    echo '<div class="price">';
-    echo '<p>' . $row["price"] . ' р.</p>';
-    echo '</div>';
-    echo '<div class="duration">';
-    echo '<ins>◷</ins>';
-    echo '<p><b>Limited edition</b></p>';
-    echo '</div>';
-    echo '</div>';
-    echo '</div>';
-    echo '</div>';
-    echo '</div>';
-}
+    while ($row = $result->fetch_assoc()) {
+        echo '<div class="nft">';
+        echo '<div class="main">';
+        echo '<div class="product">';
+        echo '<a href="tovar.php?id=' . $row["id"] . '" class="tokenImage" onmouseover="changeImage(this)" onmouseout="restoreImage(this)">';
+        echo '<img class="tokenImage front" src="' . $row["front_image"] . '" alt="NFT" />';
+        echo '<img class="tokenImage back" src="' . $row["back_image"] . '" alt="NFT" style="display: none;" />';
+        echo '</a>';
+        echo '<a href="tovar.php?id=' . $row["id"] . '" class="stepInTovar"><h2>' . $row["name"] . '</h2></a>';
+        echo '<p class="description">' . $row["description"] . '</p>';
+        echo '<div class="tokenInfo">';
+        echo '<div class="price">';
+        echo '<p>' . $row["price"] . ' р.</p>';
+        echo '</div>';
+        echo '<div class="duration">';
+        echo '<ins>◷</ins>';
+        echo '<p><b>Limited edition</b></p>';
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
+    }
 
-$conn->close();
-?>
-
+    $conn->close();
+    ?>
 
     <script>
         function changeImage(element) {

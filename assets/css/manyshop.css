@@ -26,9 +26,10 @@ body {
   flex-wrap: wrap;
   float: left;
   user-select: none;
-  max-width: 30%;
+  width: 30%;
   margin-left: 10px;
   margin-top: 10px;
+  height: 550px;
   border: 1px solid #ffffff22;
   box-shadow: 0 7px 20px 5px #00000088;
   border-radius: 0.7rem;

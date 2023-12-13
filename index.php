@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE php>
+<php>
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -39,14 +39,14 @@
                 <a href="#"><img src="assets/picture/vk.png" alt="vk"></a>
             </div>
             <div class="cart">
-                <a href="korzina.html"><img src="assets/picture/korzina.png" alt="Cart"></a>
+                <a href="cart.php"><img src="assets/picture/korzina.png" alt="Cart"></a>
             </div>
         </div>
     </nav>
     </header>
     <main>
       <div>
-          <a href = "index.html"><img src="assets/picture/shirt.png" alt="index.html" class="shirt"></a>
+          <a href = "index.php"><img src="assets/picture/shirt.png" alt="index.php" class="shirt"></a>
       </div>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" rel="stylesheet"/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
@@ -55,12 +55,12 @@
       <div class="owl-carousel owl-theme">
           <div class="item">
             <div class="flex-container">
-              <a href="tovar.html"><img src="assets/picture/bigKifta.jpg" alt=""></a>
+              <a href="tovar.php"><img class="img_swap" src="assets/picture/Товар1Перед.jpg" alt=""></a>
             </div>
           </div>
             <div class="item">
               <div class="flex-container">
-                <img src="assets/picture/littleKifta.jpg" alt="">
+                <a href="tovar.php"><img class="img_swap" src="assets/picture/Товар1Зад.jpg" alt=""></a>
               </div>
           </div>
       </div>
@@ -69,12 +69,12 @@
       <div class="owl-carousel owl-theme">
           <div class="item">
             <div class="flex-container">
-              <img src="assets/picture/littleKifta.jpg" alt="">
+              <a href="tovar.php"><img class="img_swap" src="assets/picture/Товар2Зад.jpg" alt=""></a>
             </div>
           </div>
             <div class="item">
               <div class="flex-container">
-                <img src="assets/picture/bigKifta.jpg" alt="">
+                <a href="tovar.php"><img class="img_swap" src="assets/picture/Товар2Перед.jpg" alt=""></a>
               </div>
           </div>
       </div>
@@ -83,12 +83,12 @@
       <div class="owl-carousel owl-theme">
           <div class="item">
             <div class="flex-container">
-              <img src="assets/picture/bigKifta.jpg" alt="">
+              <a href="tovar.php"><img class="img_swap" src="assets/picture/Товар3Перед.jpg" alt=""></a>
             </div>
           </div>
             <div class="item">
               <div class="flex-container">
-                <img src="assets/picture/littleKifta.jpg" alt="">
+                <a href="tovar.php"><img class="img_swap" src="assets/picture/Товар3Зад.jpg" alt=""></a>
               </div>
           </div>
       </div>
@@ -96,9 +96,9 @@
         <div class="col4">
       <div class="owl-carousel owl-theme">
           <div class="item">
-            <div class="flex-container">
-              <img src="assets/picture/blackSun.png" alt="">
-            </div>
+            <a href="clothing.php"><div class="flex-container">
+              <img class="img_swap" src="assets/picture/blackSun.png" alt="">
+            </div></a>
           </div>
       </div>
       </div>
@@ -131,4 +131,4 @@
 <script src="jquery-1.11.2.min.js"></script>
 <script src="owlcarousel/owl.carousel.min.js"></script>
 </body>
-</html>
+</php>

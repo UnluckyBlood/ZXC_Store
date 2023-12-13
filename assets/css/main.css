@@ -1,6 +1,10 @@
 body{
     background-color: black;
 }
+form{
+  color: #fff;
+  flex-direction: row;
+}
 .navbar {
   display: flex;
   justify-content: space-between;
