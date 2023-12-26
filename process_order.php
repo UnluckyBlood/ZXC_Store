@@ -5,15 +5,15 @@ include('connection.php');
 if (isset($_POST['submit_order'])) {
     // Получаем данные пользователя
     $email = $_POST['email'];
-    $vk = $_POST['vk_link']; // Исправлено
-    $name = $_POST['fullname']; // Исправлено
+    $vk = $_POST['vk_link'];
+    $name = $_POST['full_name'];
     $address = $_POST['address'];
     $postalCode = $_POST['postal_code'];
-    $phone = $_POST['phone_number']; // Исправлено
+    $phone = $_POST['phone_number'];
 
     // Вставляем данные в базу данных
-    $sqlInsertOrder = "INSERT INTO orders (email, vk_link, fullname, address, postal_code, phone_number)
-                      VALUES ('$email', '$vk', '$name', '$address', '$postalCode', '$phone')";
+    $sqlInsertOrder = "INSERT INTO orders (email, vk_link, fullname, address, postal_code, phone)
+    VALUES ('$email', '$vk', '$name', '$address', '$postalCode', '$phone')";
     $conn->query($sqlInsertOrder);
 
     // Очищаем корзину пользователя
@@ -26,4 +26,3 @@ if (isset($_POST['submit_order'])) {
 }
 
 $conn->close();
-?>

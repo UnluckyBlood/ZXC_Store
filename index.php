@@ -45,7 +45,7 @@
     </nav>
     </header>
     <main>
-      <div>
+      <div class="fake">
           <a href = "index.php"><img src="assets/picture/shirt.png" alt="index.php" class="shirt"></a>
       </div>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" rel="stylesheet"/>

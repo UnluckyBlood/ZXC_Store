@@ -1,0 +1,129 @@
+.body {
+    background-color: black;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: #fff;
+    padding-left: 5px;
+  }
+  
+  .left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .brand {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+  
+  .brand img {
+    width: 35px;
+    height: 35px;
+    padding-top: 5px;
+    margin-right: 10px;
+  }
+  
+  .brand ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .brand ul li {
+    display: inline;
+    margin-right: 5px;
+  }
+  
+  .brand a {
+    text-decoration: none;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+  }
+  
+  .center ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-right: 65px;
+  }
+  
+  .center ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  .center a {
+    text-decoration: none;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+  }
+  
+  .right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .social-icons a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 10px;
+  }
+  
+  .cart a {
+    text-decoration: none;
+    color: #fff;
+  }
+.main {
+    background-color: white;
+}
+.product {
+    width: 250px;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background-image: url('assets/picture/jersy1.png'); 
+    background-size: cover;
+    background-position: center;
+    height: 250px; 
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.product h2 {
+    font-size: 18px;
+    font-family: sans-serif;
+}
+
+.product p {
+    margin: 5px 0;
+    font-family: sans-serif;
+}
+
+.product:hover .image-container {
+    background-image: url('assets/picture/jersy2.png');
+}
+
+.product:hover .product-image {
+    opacity: 0;
+}
