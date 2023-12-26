@@ -13,38 +13,43 @@
 <body>
 
 <?php
+session_start();
 include('connection.php');
 
-// Проверяем, передан ли параметр id в URL
 if (isset($_GET['id'])) {
     $productId = $_GET['id'];
 
-    // Получаем информацию о товаре по ID из базы данных
-    $sqlProduct = "SELECT * FROM products WHERE id = $productId";
-    $resultProduct = $conn->query($sqlProduct);
+    $sqlProduct = $conn->prepare("SELECT * FROM products WHERE id = ?");
+    $sqlProduct->bind_param("i", $productId);
+    $sqlProduct->execute();
+    $resultProduct = $sqlProduct->get_result();
 
-    // Проверяем, есть ли результат
     if ($resultProduct->num_rows > 0) {
         $rowProduct = $resultProduct->fetch_assoc();
 
-        // Добавляем товар в корзину
         if (isset($_POST['add_to_cart'])) {
             $productId = $_POST['product_id'];
             $sizeId = $_POST['size_id'];
 
-            // Проверяем, есть ли уже такой товар в корзине
-            $sqlCheck = "SELECT * FROM cart WHERE id_product = $productId AND id_size = $sizeId";
-            $resultCheck = $conn->query($sqlCheck);
+            $sqlCheck = "SELECT * FROM cart WHERE id_product = ? AND id_size = ?";
+            $resultCheck = $conn->prepare($sqlCheck);
+            $resultCheck->bind_param("ii", $productId, $sizeId);
+            $resultCheck->execute();
 
-            if ($resultCheck->num_rows > 0) {
-                // Если товар уже есть в корзине, увеличиваем количество
-                $sqlUpdate = "UPDATE cart SET quantity = quantity + 1 WHERE id_product = $productId AND id_size = $sizeId";
-                $conn->query($sqlUpdate);
+            if ($resultCheck->get_result()->num_rows > 0) {
+                $sqlUpdate = "UPDATE cart SET quantity = quantity + 1 WHERE id_product = ? AND id_size = ?";
+                $stmtUpdate = $conn->prepare($sqlUpdate);
+                $stmtUpdate->bind_param("ii", $productId, $sizeId);
+                $stmtUpdate->execute();
             } else {
-                // Если товара нет в корзине, добавляем его
-                $sqlInsert = "INSERT INTO cart (id_product, id_size, quantity) VALUES ($productId, $sizeId, 1)";
-                $conn->query($sqlInsert);
+                $sqlInsert = "INSERT INTO cart (id_product, id_size, quantity) VALUES (?, ?, 1)";
+                $stmtInsert = $conn->prepare($sqlInsert);
+                $stmtInsert->bind_param("ii", $productId, $sizeId);
+                $stmtInsert->execute();
             }
+
+            // Устанавливаем выбранный размер в текущий
+            $_SESSION['selected_size'] = $sizeId;
         }
 
         // Отображаем информацию о товаре
@@ -89,28 +94,32 @@ if (isset($_GET['id'])) {
         echo '<p>' . $rowProduct["description"] . '</p>';
         echo '</div>';
 
+        
+
         echo '<div class="product-configuration">';
         echo '<div class="cable-config">';
         echo '<span>Выберите размер:</span>';
-        echo '<div class="cable-choose">';
+        echo '<div class="cable-choose" id="sizeButtons">';
 
-        // Получаем размеры для данного товара
         $sqlSizes = "SELECT sizes.id_size, sizes.size_name FROM product_sizes
-                     JOIN sizes ON product_sizes.id_size = sizes.id_size
-                     WHERE product_sizes.id_product = $productId";
-        $resultSizes = $conn->query($sqlSizes);
+                    JOIN sizes ON product_sizes.id_size = sizes.id_size
+                    WHERE product_sizes.id_product = ?";
+        $stmtSizes = $conn->prepare($sqlSizes);
+        $stmtSizes->bind_param("i", $productId);
+        $stmtSizes->execute();
+        $resultSizes = $stmtSizes->get_result();
 
-        // Проверяем, есть ли размеры
         if ($resultSizes->num_rows > 0) {
             while ($rowSize = $resultSizes->fetch_assoc()) {
+                $isSelected = ($rowSize["id_size"] == $_SESSION['selected_size']) ? 'activeBut' : '';
+
                 echo '<form method="post">';
                 echo '<input type="hidden" name="product_id" value="' . $productId . '">';
-                echo '<input type="hidden" class="activeBut" name="size_id" value="' . $rowSize["id_size"] . '">';
-                echo '<button type="submit" name="add_to_cart">Size ' . $rowSize["size_name"] . '</button>';
+                echo '<input type="hidden" class="' . $isSelected . '" name="size_id" value="' . $rowSize["id_size"] . '">';
+                echo '<button type="submit" class="' . $isSelected . '" name="add_to_cart" value="1">' . $rowSize["size_name"] . '</button>';
                 echo '</form>';
             }
         } else {
-            // Если размеры не найдены
             echo '<div>No sizes available</div>';
         }
 
@@ -120,24 +129,30 @@ if (isset($_GET['id'])) {
 
         echo '<div class="product-price">';
         echo '<span>' . $rowProduct["price"] . ' р.</span>';
-        echo '<a href="#" class="cart-btn">Купить</a>';
+        echo '<button id="buyBtn" class="cart-btn">Купить</button>';
         echo '</div>';
         echo '</div>';
         echo '</main>';
     } else {
-        // Если товар с указанным ID не найден
         echo '<div>Product not found</div>';
     }
 } else {
-    // Если не передан параметр id
     echo '<div>No product ID specified</div>';
 }
 
 $conn->close();
 ?>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
-<script src="assets/js/tovar.js" charset="utf-8"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+$(document).ready(function() {
+    $("#sizeButtons button").click(function() {
+        $("#sizeButtons button").removeClass("activeBut");
+        $(this).addClass("activeBut");
+    });
+});
+</script>
+
 </body>
 
 </html>
