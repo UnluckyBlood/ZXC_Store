@@ -79,7 +79,7 @@ if ($resultCart === false) {
     // Вывод корзины
     if ($resultCart->num_rows > 0) {
         echo '<table>';
-        echo '<tr><th>Product</th><th>Price</th><th>Size</th><th>Quantity</th></tr>';
+        echo '<tr><th>Продукт</th><th>Цена</th><th>Размер</th><th>Количество</th></tr>';
 
         $totalPrice = 0;
 
@@ -96,9 +96,9 @@ if ($resultCart === false) {
 
         echo '</table>';
 
-        echo '<div class="Price">Total Price: ' . $totalPrice . ' р.</div>';
+        echo '<div class="Price">Общая стоимость: ' . $totalPrice . ' р.</div>';
     } else {
-        echo '<div>Your cart is empty</div>';
+        echo '<div>Корзина пуста</div>';
     }
 
     // Закрываем соединение
