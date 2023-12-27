@@ -96,11 +96,7 @@ if ($resultCart === false) {
 
         echo '</table>';
 
-<<<<<<< HEAD
         echo '<div class="Price">Total Price: ' . $totalPrice . ' р.</div>';
-=======
-        echo '<div>Total Price: ' . $totalPrice . ' р.</div>';
->>>>>>> 753c3731c20210d7e9f044364e7843600ddca0be
     } else {
         echo '<div>Your cart is empty</div>';
     }
