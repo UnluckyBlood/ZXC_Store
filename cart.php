@@ -18,7 +18,7 @@ $sqlCart = "SELECT
                 cart.id_product,
                 cart.id_size,
                 cart.quantity,
-                cart.price,
+                products.price,
                 products.name AS product_name,
                 sizes.size_name
             FROM 
@@ -90,9 +90,9 @@ if ($resultCart === false) {
             echo '<td>' . $rowCart['size_name'] . '</td>';
             echo '<td>' . $rowCart['quantity'] . '</td>';
             echo '</tr>';
-
+        
             $totalPrice += $rowCart['price'] * $rowCart['quantity'];
-        }
+        }        
 
         echo '</table>';
 
