@@ -18,7 +18,7 @@ $sqlCart = "SELECT
                 cart.id_product,
                 cart.id_size,
                 cart.quantity,
-                cart.price,
+                products.price,
                 products.name AS product_name,
                 sizes.size_name
             FROM 
@@ -79,7 +79,7 @@ if ($resultCart === false) {
     // Вывод корзины
     if ($resultCart->num_rows > 0) {
         echo '<table>';
-        echo '<tr><th>Product</th><th>Price</th><th>Size</th><th>Quantity</th></tr>';
+        echo '<tr><th>Продукт</th><th>Цена</th><th>Размер</th><th>Количество</th></tr>';
 
         $totalPrice = 0;
 
@@ -90,19 +90,15 @@ if ($resultCart === false) {
             echo '<td>' . $rowCart['size_name'] . '</td>';
             echo '<td>' . $rowCart['quantity'] . '</td>';
             echo '</tr>';
-
+        
             $totalPrice += $rowCart['price'] * $rowCart['quantity'];
-        }
+        }        
 
         echo '</table>';
 
-<<<<<<< HEAD
-        echo '<div class="Price">Total Price: ' . $totalPrice . ' р.</div>';
-=======
-        echo '<div>Total Price: ' . $totalPrice . ' р.</div>';
->>>>>>> 753c3731c20210d7e9f044364e7843600ddca0be
+        echo '<div class="Price">Общая стоимость: ' . $totalPrice . ' р.</div>';
     } else {
-        echo '<div>Your cart is empty</div>';
+        echo '<div>Корзина пуста</div>';
     }
 
     // Закрываем соединение

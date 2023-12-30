@@ -42,7 +42,7 @@ body {
 .product {
   margin: 20px;
   text-align: center;
-  width: 100%; /* Добавьте эту строку для установки ширины товара в 100% */
+  width: 100%; 
 }
 
 .nft hr {
@@ -188,10 +188,8 @@ body {
 
 .tokenImage {
   max-width: 100%;
-  /* Измените значение на желаемую ширину изображений */
   display: block;
   margin: 0 auto;
-  /* Для отцентровки изображений по горизонтали */
 }
 @media (max-width: 800px) {
   .nft {
@@ -201,9 +199,10 @@ body {
     flex-wrap: wrap;
     float: left;
     user-select: none;
-    width: 90%;
+    width: 95%;
     margin-left: 10px;
     margin-top: 10px;
+    margin-right: 10px;
     height: 550px;
     border: 1px solid #ffffff22;
     box-shadow: 0 7px 20px 5px #00000088;

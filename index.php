@@ -55,12 +55,12 @@
       <div class="owl-carousel owl-theme">
           <div class="item">
             <div class="flex-container">
-              <a href="tovar.php"><img class="img_swap" src="assets/picture/Товар1Перед.jpg" alt=""></a>
+              <a href="tovar.php?id=1"><img class="img_swap" src="assets/picture/Товар1Перед.jpg" alt=""></a>
             </div>
           </div>
             <div class="item">
               <div class="flex-container">
-                <a href="tovar.php"><img class="img_swap" src="assets/picture/Товар1Зад.jpg" alt=""></a>
+                <a href="tovar.php?id=1"><img class="img_swap" src="assets/picture/Товар1Зад.jpg" alt=""></a>
               </div>
           </div>
       </div>
@@ -69,12 +69,12 @@
       <div class="owl-carousel owl-theme">
           <div class="item">
             <div class="flex-container">
-              <a href="tovar.php"><img class="img_swap" src="assets/picture/Товар2Зад.jpg" alt=""></a>
+              <a href="tovar.php?id=4"><img class="img_swap" src="assets/picture/Товар4Зад.jpg" alt=""></a>
             </div>
           </div>
             <div class="item">
               <div class="flex-container">
-                <a href="tovar.php"><img class="img_swap" src="assets/picture/Товар2Перед.jpg" alt=""></a>
+                <a href="tovar.php?id=4"><img class="img_swap" src="assets/picture/Товар4Перед.jpg" alt=""></a>
               </div>
           </div>
       </div>
@@ -83,12 +83,12 @@
       <div class="owl-carousel owl-theme">
           <div class="item">
             <div class="flex-container">
-              <a href="tovar.php"><img class="img_swap" src="assets/picture/Товар3Перед.jpg" alt=""></a>
+              <a href="tovar.php?id=3"><img class="img_swap" src="assets/picture/Товар3Перед.jpg" alt=""></a>
             </div>
           </div>
             <div class="item">
               <div class="flex-container">
-                <a href="tovar.php"><img class="img_swap" src="assets/picture/Товар3Зад.jpg" alt=""></a>
+                <a href="tovar.php?id=3"><img class="img_swap" src="assets/picture/Товар3Зад.jpg" alt=""></a>
               </div>
           </div>
       </div>
